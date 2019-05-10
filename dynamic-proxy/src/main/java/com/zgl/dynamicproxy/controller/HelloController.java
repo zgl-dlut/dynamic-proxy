@@ -23,7 +23,7 @@ public class HelloController {
 
 	@Proxy(value = "zyy")
 	@GetMapping("/hello")
-	public String hello(String id){
+	public String hello(String id) {
 		return studentService.getStudentById(id);
 	}
 }
