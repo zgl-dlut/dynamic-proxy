@@ -6,21 +6,19 @@ import com.zgl.dynamicproxy.service.Dog;
 import com.zgl.dynamicproxy.service.impl.GunDog;
 import com.zgl.dynamicproxy.util.DogUtil;
 
-import java.lang.reflect.Field;
-
 /**
  * @author zgl
  * @date 2019/4/24 下午9:36
  */
 public class ProxyTest {
-	public static void main(String[] args) throws Exception{
+	public static void main(String[] args) throws Exception {
 
-		Dog dog=new GunDog();
-		Dog jdkProxy=JdkProxyFactory.getProxy(new GunDog());
+		Dog dog = new GunDog();
+		Dog jdkProxy = JdkProxyFactory.getProxy(new GunDog());
 		jdkProxy.info();
 		jdkProxy.run();
 
-		DogUtil cglibProxy=CglibProxyFactory.getProxyInstance(new DogUtil());
+		DogUtil cglibProxy = CglibProxyFactory.getProxyInstance(new DogUtil());
 		cglibProxy.method3();
 
 		/**
